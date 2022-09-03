@@ -26,7 +26,7 @@
     </form>
     
     <!--<input type="text" @characterFormValidated="test()" />-->
-    <button @click="emitTitleChange()">Emit signal</button>
+    <button @click="validateFormAlternate()">Emit signal</button>
 
     <p>{{ race }}</p>
     <p>{{ name }}</p>
@@ -48,8 +48,13 @@
         methods: {
             validateForm() {
                 console.log("Validating form!");
-                this.$emit("formValidated");
             },
+
+            validateFormAlternate() {
+                console.log("TEST: Validating without filling the form...");
+                this.$emit("formValidated");
+            }
+
         }
     }
 

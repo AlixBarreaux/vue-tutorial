@@ -3,7 +3,7 @@
         <CharacterForm />
         <!-- @characterFormValidated="displayCharacterInfo()" -->
         <div>
-            <p @changeTitle="updateTitle()">Title: {{ this.title }}</p>
+            <p @formValidated="displayCharacterInfo()">Title: {{ this.title }}</p>
         </div>
     </div>
 </template>
@@ -27,13 +27,8 @@
         method: {
             displayCharacterInfo() {
                 console.log("Signal received!");
-            },
-
-            updateTitle() {
-                //this.title = updatedTitle;
-                console.log("Update title!");
                 alert("Title updated! FINALLY! :)");
-            }
+            },
         }
     }
 </script>
