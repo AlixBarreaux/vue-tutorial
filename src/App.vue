@@ -1,15 +1,42 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <AssignmentsComp />
+  <AssignmentCreate />
+  <ListComp />
+  <hr />
+
+  <CreateCharacter />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import AssignmentsComp from "./components/AssignmentsComp.vue";
+import AssignmentCreate from "./components/AssignmentCreate.vue"
+
+import ListComp from "./components/ListComp.vue"
+
+import CreateCharacter from "./components/CreateCharacter.vue"
 
 export default {
   name: 'App',
+
   components: {
-    HelloWorld
+    AssignmentsComp,
+    AssignmentCreate,
+    ListComp,
+
+    CreateCharacter
+  },
+
+  data() {
+    return {
+        
+    }
+  },
+
+  methods: {
+    
   }
 }
 </script>
