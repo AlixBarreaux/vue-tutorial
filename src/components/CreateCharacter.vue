@@ -1,9 +1,9 @@
 <template>
     <div>
-        <CharacterForm />
+        <CharacterForm @formValidated="displayCharacterInfo()" />
         <!-- @characterFormValidated="displayCharacterInfo()" -->
         <div>
-            <p @formValidated="displayCharacterInfo()">Title: {{ this.title }}</p>
+            <p>Title: {{ this.title }}</p>
         </div>
     </div>
 </template>

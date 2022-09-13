@@ -52,9 +52,30 @@
 
             validateFormAlternate() {
                 console.log("TEST: Validating without filling the form...");
-                this.$emit("formValidated");
-            }
+                this.$emit('formValidated');
+            },
 
+        },
+
+        created() {
+            let pokemon = {};
+
+            fetch("https://pokeapi.co/api/v2/pokemon/squirtle")
+            .then(response => response.json())
+            .then(data => {
+                pokemon = data;
+                console.log(data);
+                console.log(pokemon);
+
+                this.name = data.name;
+                this.race = data.sprites.back_default;
+            })
+            .catch( (error) => {
+                console.error("(!) Error: ", error);
+            })
+           
+
+            
         }
     }
 
