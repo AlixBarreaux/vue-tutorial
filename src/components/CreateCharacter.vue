@@ -1,13 +1,20 @@
 <template>
     <div>
-        <CharacterForm>
+        <!-- Cheat sheet:
+        Single arg:
+        <CharacterForm @formValidated="displayCharacterInfo">
+            
+        Several args:
+        <CharacterForm @formValidated="(args) => displayCharacterInfo(args)">
+        -->
+        <CharacterForm @formValidated="displayCharacterInfo">
             <template #default="defaultSlotProps"><p><strong>Brand: {{ defaultSlotProps.brand }} Amount: {{ defaultSlotProps.amount }}</strong></p></template>
             <template #main-content="mainContentSlotProps"><p><em>Changed main content: {{ mainContentSlotProps.mainText }}</em></p></template>
             <template #ending-content><h4>Changed ending content</h4></template>
         </CharacterForm>
-        <p @characterFormValidated="displayCharacterInfo"></p>
+        
     </div>
-</template>
+</template>^
 
 <script>
     import CharacterForm from './CharacterForm.vue';
@@ -25,7 +32,7 @@
             CharacterForm
         },
 
-        method: {
+        methods: {
             displayCharacterInfo() {
                 console.log("Signal received!");
                 alert("Title updated! FINALLY! :)");
