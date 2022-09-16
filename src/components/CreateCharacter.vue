@@ -5,7 +5,7 @@
             <template #main-content="mainContentSlotProps"><p><em>Changed main content: {{ mainContentSlotProps.mainText }}</em></p></template>
             <template #ending-content><h4>Changed ending content</h4></template>
         </CharacterForm>
-        <!-- @characterFormValidated="displayCharacterInfo()" -->
+        <p @characterFormValidated="displayCharacterInfo"></p>
     </div>
 </template>
 

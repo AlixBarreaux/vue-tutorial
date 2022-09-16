@@ -28,7 +28,7 @@
     </form>
     
     <!--<input type="text" @characterFormValidated="test()" />-->
-    <button @click="validateFormAlternate()">Emit signal</button>
+    <button @click="validateFormAlternate">Emit signal</button>
 
     <p>{{ race }}</p>
     <p>{{ name }}</p>
