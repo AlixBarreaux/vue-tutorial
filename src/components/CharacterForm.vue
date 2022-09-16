@@ -1,5 +1,10 @@
 <template>
     <form @submit.prevent="validateForm()">
+
+        <slot name="default" :brand="'Kalori'" :amount="6"><h2>Default content</h2></slot>
+        <slot name="main-content" :mainText="'Main text'"><h2>Default main content</h2></slot>
+        <slot name="ending-content"><h3>Default end message</h3></slot>
+        
         <label for="race-select">Choose a Race:</label>
         <select name="race-select" id="race-select" v-model="race">
             <option value="human">Human</option>
@@ -8,19 +13,16 @@
             <option value="tauren">Tauren</option>
         </select>
         <br /><br />
-
+        
         <label for="name-input">Enter your name:</label>
         <input name="name-input" type="text" v-model="name" />
         <br /><br />
-
 
         <div id="companions-list-input" v-for="companion in 3" :key="companion">
             <label for="">Companion {{ companion }}:</label>
             <input name="" type="text" v-model="companionsList[companion -1]" />
             <br /><br />
         </div>
-
-        
 
         <button type="submit">Create Character</button>
     </form>

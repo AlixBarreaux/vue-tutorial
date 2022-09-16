@@ -1,10 +1,11 @@
 <template>
     <div>
-        <CharacterForm @formValidated="displayCharacterInfo()" />
+        <CharacterForm>
+            <template #default="defaultSlotProps"><p><strong>Brand: {{ defaultSlotProps.brand }} Amount: {{ defaultSlotProps.amount }}</strong></p></template>
+            <template #main-content="mainContentSlotProps"><p><em>Changed main content: {{ mainContentSlotProps.mainText }}</em></p></template>
+            <template #ending-content><h4>Changed ending content</h4></template>
+        </CharacterForm>
         <!-- @characterFormValidated="displayCharacterInfo()" -->
-        <div>
-            <p>Title: {{ this.title }}</p>
-        </div>
     </div>
 </template>
 
@@ -28,7 +29,7 @@
             displayCharacterInfo() {
                 console.log("Signal received!");
                 alert("Title updated! FINALLY! :)");
-            },
+            }
         }
     }
 </script>
